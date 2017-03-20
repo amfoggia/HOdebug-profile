@@ -26,7 +26,7 @@ PROGRAM DEBUG
 
   IMPLICIT NONE
 
-  INTEGER, PARAMETER :: SIZE = 1000
+  INTEGER, PARAMETER :: SIZE = 2500
 
   INTEGER :: i, j
   REAL*4, ALLOCATABLE, DIMENSION ( :, : ) :: A, C
@@ -42,8 +42,8 @@ PROGRAM DEBUG
 
   C = 0.0
 
-  CALL mat_Tmat_mul( A, SIZE )
-
+  CALL mat_Tmat_mul( A, C, SIZE )
+write(*,*) C
   DEALLOCATE( A );
   DEALLOCATE( C );
 
